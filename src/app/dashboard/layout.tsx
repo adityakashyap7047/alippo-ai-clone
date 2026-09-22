@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { getStore } from "@/lib/store";
 import { useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [ready, setReady] = useState(false);
