@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Sparkles, Store, ArrowRight, Zap, ShoppingCart, Bot, Shield, Clock, Star } from "lucide-react";
 import StoreCreationForm from "@/components/StoreCreationForm";
 import { createStore, getStore, generateSampleData } from "@/lib/store";
@@ -8,6 +9,7 @@ import { createStore, getStore, generateSampleData } from "@/lib/store";
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
   const [storeExists, setStoreExists] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const store = getStore();
@@ -17,7 +19,7 @@ export default function Home() {
   const handleStoreCreated = (name: string, category: string) => {
     createStore(name, category, "Your AI-powered store");
     generateSampleData();
-    window.location.href = "/dashboard";
+    router.push("/dashboard");
   };
 
   const features = [

@@ -11,10 +11,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   useEffect(() => {
     const store = getStore();
-    if (!store) {
-      router.push("/");
-    } else {
+    if (store) {
       setReady(true);
+    } else {
+      router.replace("/");
     }
   }, [router]);
 
