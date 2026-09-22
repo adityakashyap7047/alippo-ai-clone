@@ -6,6 +6,8 @@ import { Sparkles, Store, ArrowRight, Zap, ShoppingCart, Bot, Shield, Clock, Sta
 import StoreCreationForm from "@/components/StoreCreationForm";
 import { createStore, getStore, generateSampleData } from "@/lib/store";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
   const [storeExists, setStoreExists] = useState(false);
